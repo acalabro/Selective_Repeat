@@ -1,0 +1,25 @@
+Stringa ricevuta da raspberry su seriale.
+
+Head and Tail sono identificati da #
+Il carattere & è separatore tra le entità da impacchettare per trasmettere
+
+Possibile eliminare la stringa iniziale "BSSID:"
+
+#BSSID:b0:90:7e:c8:95:a1&-60dBm&41.1022,10.1212#
+
+
+BSSID:b0:90:7e:c8:95:a1 corrisponde al MAC del dispositivo rilevato
+-60dBm è il SSNR del segnale wifi del dispositivo rilevato
+41.1022,10.1212 corrisponde alla latitudine e longitudine del rilevamento
+
+4343.14287
+01025.26612
+
+Possibile proposta: da valutare consumo memoria in caso di possibili int/float
+
+  char DeviceMAC[20];
+  char DeviceSNR[5];
+  char Longitude[14];
+  char Latitude[14];
+  
+  
